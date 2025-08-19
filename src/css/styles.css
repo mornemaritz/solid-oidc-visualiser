@@ -1,3 +1,10 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+}
+
 #sequence-diagram {
     display: flex;
     flex-direction: column;
@@ -6,6 +13,7 @@
     justify-content: space-between;
     padding: 40px 20px;
     height: 100vh;
+    overflow: hidden; /* Prevent diagram scroll */    
 }
 
 .top-row {
@@ -29,7 +37,9 @@
     right: 0;
     background: white;
     z-index: 1001;
-    padding: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
     display: flex;
     justify-content: space-around;
     transition: bottom 0.3s ease; /* Add transition to match expandable-content */
@@ -43,7 +53,7 @@
     position: relative;
     padding: 0 1%;
     margin-top: 11px; /* Adjust based on your top-row height */
-    margin-bottom: 88px; /* Adjust based on bottom-row + expandable initial height */
+    margin-bottom: 159px; /* Adjust based on bottom-row + expandable initial height */
     overflow-y: auto;
     flex: 1;
 }
@@ -368,9 +378,4 @@
 
 #expand-toggle:hover {
     background: #0056b3;
-}
-
-/* Add subtle shadows to create depth */
-.top-row, .bottom-row {
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
