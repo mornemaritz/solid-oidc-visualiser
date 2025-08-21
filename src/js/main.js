@@ -14,9 +14,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     const expandableContent = document.getElementById('expandable-content');
     const expandToggle = document.getElementById('expand-toggle');
+    const bottomRow = document.getElementById('bottom-row');
     
     expandToggle.addEventListener('click', function() {
         expandableContent.classList.toggle('expanded');
+        bottomRow.classList.toggle('expanded');
         expandToggle.textContent = expandableContent.classList.contains('expanded') ? 'Collapse' : 'Expand';
     });
 });
