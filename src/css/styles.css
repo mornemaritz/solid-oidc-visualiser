@@ -99,23 +99,18 @@ body {
 }
 
 .horizontal-line.second-to-fourth {
-    left: 37.75%;
-    width: 49%;
+    left: 76.33vh;
+    width: 101.33vh;
 }
 
 .horizontal-line.first-to-second {
-    left: 13.25%;
+    left: 12vw;
     width: 24.5%;
-}
-
-.horizontal-line.first-to-third {
-    left: 13.25%;
-    width: 49%;
 }
 
 .horizontal-line.second-to-third {
-    left: 37.75%;
-    width: 24.5%;
+    left: 76.33vh;
+    width: 50.66vh;
 }
 
 .horizontal-line::after {
