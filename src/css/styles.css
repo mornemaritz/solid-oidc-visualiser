@@ -3,6 +3,7 @@ body {
     padding: 0;
     overflow: hidden;
     height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #sequence-diagram {
@@ -138,16 +139,34 @@ body {
     align-items: center;
 }
 
+.label-container.second-line
+{
+    margin-right: 50vh;
+}
+
+.label-container.second-to-fourth-line
+{
+    margin-left: 50vh;
+}
+
+.label-container.fourth-line
+{
+    margin-left: 150vh;
+}
+
 .floating-label {
-    background: white;
+    background: rgb(255, 251, 197);
+    border: 1px solid rgb(219, 215, 156);
     padding: 2px 10px;
-    border-radius: 4px;
+    border-radius: 2px;
+    margin: 2px;
     font-size: 0.9em;
     white-space: nowrap;
     width: fit-content;
     text-align: center;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
+
 
 /* Expandable Content Styles */
 .expandable-content {
