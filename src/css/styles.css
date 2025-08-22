@@ -49,13 +49,16 @@ body {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    flex-grow: 1;
     position: relative;
     padding: 0 1%;
-    margin-top: 11px; /* Adjust based on your top-row height */
-    margin-bottom: 159px; /* Adjust based on bottom-row + expandable initial height */
+    margin-top: 20px; /* Adjust based on your top-row height */
+    margin-bottom: 160px; /* Adjust based on bottom-row + expandable initial height */
     overflow-y: auto;
     flex: 1;
+}
+
+.vertical-lines-container {
+    display: flex;
 }
 
 .block {
@@ -67,10 +70,11 @@ body {
     min-width: 100px;
 }
 
-.line {
-    width: 2px;
+.vertical-line {
+    border-left: 2px solid #333;
+    padding-left: 12vw;
+    margin-left: 12vw;
     height: 100%;
-    background-color: #333;
 }
 
 .horizontal-line {
