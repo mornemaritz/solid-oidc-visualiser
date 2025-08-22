@@ -15,79 +15,78 @@
             <div class="block" id="block4">⚙️ Client</div>
         </div>
         <div class="lines-container">
-            <div class="horizontal-lines-container" id="horizontal-lines-container">
-                <div class="label-container right top-1">
-                    <div class="floating-label">1. Alice uses the decentphotos app</div>
-                    <div class="floating-label">2. Alice selects her OP or WebID</div>
-                </div>
-                <div class="label-container middle top-5">
-                    <div class="floating-label">2.1 Retrieve Profile</div>
-                </div>
-                <div class="horizontal-line horizontal-line-10 right-to-left first-to-fourth" id="h-line1"></div>
-                <div class="label-container middle top-11">
-                    <div class="floating-label">WebID Profile</div>
-                </div>
-                <div class="horizontal-line horizontal-line-15 left-to-right first-to-fourth" id="h-line2"></div>
-                <div class="label-container middle top-16">
-                    <div class="floating-label">3. Retrieves OP Configuration</div>
-                </div>
-                <div class="horizontal-line horizontal-line-20 right-to-left second-to-fourth" id="h-line3"></div>
-                <div class="label-container middle top-21">
-                    <div class="floating-label">OP Configuration</div>
-                </div>
-                <div class="horizontal-line horizontal-line-25 left-to-right second-to-fourth" id="h-line4"></div>
-                <div class="label-container right top-26">
-                    <div class="floating-label">4. Generates PKCE code and code verifier</div>
-                    <div class="floating-label">5. Saves code verifier to session storage</div>
-                </div>
-                <div class="label-container middle top-31">
-                    <div class="floating-label">6. Authorization Request</div>
-                </div>
-                <div class="horizontal-line horizontal-line-35 right-to-left second-to-fourth" id="h-line5"></div>
-                <div class="label-container middle top-36">
-                    <div class="floating-label">7. Fetch ClientID Document</div>
-                </div>
-                <div class="horizontal-line horizontal-line-40 left-to-right second-to-third" id="h-line6"></div>
-                <div class="label-container middle top-41">
-                    <div class="floating-label">ClientID Profile</div>
-                </div>
-                <div class="horizontal-line horizontal-line-45 right-to-left second-to-third" id="h-line7"></div>
-                <div class="label-container second top-47">
-                    <div class="floating-label">8. Validates redirect with WebID</div>
-                    <div class="floating-label">9. Alice logs in</div>
-                    <div class="floating-label">10. Generates a code</div>
-                </div>
-                <div class="label-container middle top-57">
-                    <div class="floating-label">11. Send code to redirect url</div>
-                </div>
-                <div class="horizontal-line horizontal-line-61 left-to-right second-to-fourth" id="h-line7"></div>
-                <div class="label-container right top-63">
-                    <div class="floating-label">12. Generates DPoP Client Key Pair</div>
-                    <div class="floating-label">13. Generates a DPoP Header</div>
-                </div>
-                <div class="label-container middle top-69">
-                    <div class="floating-label">14. Token request with code and code verifier</div>
-                </div>
-                <div class="horizontal-line horizontal-line-73 right-to-left second-to-fourth" id="h-line8"></div>
-                <div class="label-container second top-75">
-                    <div class="floating-label">15. Validates code verifier</div>
-                    <div class="floating-label">16. Validates DPoP signature</div>
-                    <div class="floating-label">17. Converts DPoP public key to a JWK Thumbprint</div>
-                    <div class="floating-label">19. Generates id token</div>
-                    <div class="floating-label">20. Generates refresh token</div>
-                </div>
-                <div class="label-container middle top-91">
-                    <div class="floating-label">21. Send tokens</div>
-                </div>
-                <div class="horizontal-line horizontal-line-95 left-to-right second-to-fourth" id="h-line10"></div>
-            </div>
             <div class="vertical-lines-container" id="vertical-lines-container">
                 <div class="vertical-line" id="line1"></div>
                 <div class="vertical-line" id="line2"></div>
                 <div class="vertical-line" id="line3"></div>
                 <div class="vertical-line" id="line4"></div>
             </div>
-        </div>
+            <div class="horizontal-lines-container" id="horizontal-lines-container">
+                <div class="label-container">
+                    <div class="floating-label">1. Alice uses the decentphotos app</div>
+                    <div class="floating-label">2. Alice selects her OP or WebID</div>
+                </div>
+                <div class="label-container">
+                    <div class="floating-label">2.1 Retrieve Profile</div>
+                </div>
+                <div class="horizontal-line right-to-left first-to-fourth" id="h-line1"></div>
+                <div class="label-container">
+                    <div class="floating-label">WebID Profile</div>
+                </div>
+                <div class="horizontal-line first-to-fourth" id="h-line2"></div>
+                <div class="label-container">
+                    <div class="floating-label">3. Retrieves OP Configuration</div>
+                </div>
+                <div class="horizontal-line right-to-left second-to-fourth" id="h-line3"></div>
+                <div class="label-container">
+                    <div class="floating-label">OP Configuration</div>
+                </div>
+                <div class="horizontal-line left-to-right second-to-fourth" id="h-line4"></div>
+                <div class="label-container">
+                    <div class="floating-label">4. Generates PKCE code and code verifier</div>
+                    <div class="floating-label">5. Saves code verifier to session storage</div>
+                </div>
+                <div class="label-container">
+                    <div class="floating-label">6. Authorization Request</div>
+                </div>
+                <div class="horizontal-line right-to-left second-to-fourth" id="h-line5"></div>
+                <div class="label-container">
+                    <div class="floating-label">7. Fetch ClientID Document</div>
+                </div>
+                <div class="horizontal-line left-to-right second-to-third" id="h-line6"></div>
+                <div class="label-container">
+                    <div class="floating-label">ClientID Profile</div>
+                </div>
+                <div class="horizontal-line right-to-left second-to-third" id="h-line7"></div>
+                <div class="label-container">
+                    <div class="floating-label">8. Validates redirect with WebID</div>
+                    <div class="floating-label">9. Alice logs in</div>
+                    <div class="floating-label">10. Generates a code</div>
+                </div>
+                <div class="label-container">
+                    <div class="floating-label">11. Send code to redirect url</div>
+                </div>
+                <div class="horizontal-line left-to-right second-to-fourth" id="h-line7"></div>
+                <div class="label-container">
+                    <div class="floating-label">12. Generates DPoP Client Key Pair</div>
+                    <div class="floating-label">13. Generates a DPoP Header</div>
+                </div>
+                <div class="label-container">
+                    <div class="floating-label">14. Token request with code and code verifier</div>
+                </div>
+                <div class="horizontal-line right-to-left second-to-fourth" id="h-line8"></div>
+                <div class="label-container">
+                    <div class="floating-label">15. Validates code verifier</div>
+                    <div class="floating-label">16. Validates DPoP signature</div>
+                    <div class="floating-label">17. Converts DPoP public key to a JWK Thumbprint</div>
+                    <div class="floating-label">19. Generates id token</div>
+                    <div class="floating-label">20. Generates refresh token</div>
+                </div>
+                <div class="label-container">
+                    <div class="floating-label">21. Send tokens</div>
+                </div>
+                <div class="horizontal-line left-to-right second-to-fourth" id="h-line10"></div>
+            </div>
         <div id="bottom-row" class="bottom-row">
             <div class="block" id="block5">👩 End-User's WebID Document</div>
             <div class="block" id="block6">👩 OpenID Provider</div>
