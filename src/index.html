@@ -23,11 +23,11 @@
             </div>
             <div class="horizontal-lines-container">
                 <div class="label-container fourth-line">
-                    <div class="floating-label bordered">1. Alice uses the decentphotos app</div>
-                    <div class="floating-label bordered">2. Alice selects her OP or WebID</div>
+                    <div class="floating-label bordered action-label" id="use-app">1. Alice uses the decentphotos app</div>
+                    <div class="floating-label bordered action-label" id="select-web-id">2. Alice selects her OP or WebID</div>
                 </div>
                 <div class="label-container">
-                    <div class="floating-label">2.1 Retrieve Profile</div>
+                    <div class="floating-label action-label" id="retrieve-profile">2.1 Retrieve Profile</div>
                 </div>
                 <div class="horizontal-line right-to-left first-to-fourth"></div>
                 <div class="label-container">
@@ -35,7 +35,7 @@
                 </div>
                 <div class="horizontal-line first-to-fourth"></div>
                 <div class="label-container second-to-fourth-line">
-                    <div class="floating-label">3. Retrieves OP Configuration</div>
+                    <div class="floating-label action-label" id="retrieve-op-config">3. Retrieves OP Configuration</div>
                 </div>
                 <div class="horizontal-line right-to-left second-to-fourth"></div>
                 <div class="label-container second-to-fourth-line">
@@ -43,15 +43,15 @@
                 </div>
                 <div class="horizontal-line left-to-right second-to-fourth"></div>
                 <div class="label-container fourth-line">
-                    <div class="floating-label bordered">4. Generates PKCE code and code verifier</div>
-                    <div class="floating-label bordered">5. Saves code verifier to session storage</div>
+                    <div class="floating-label bordered action-label" id="pcke-code-verifier">4. Generates PKCE code and code verifier</div>
+                    <div class="floating-label bordered action-label" id="save-code-verifier">5. Saves code verifier to session storage</div>
                 </div>
                 <div class="label-container second-to-fourth-line">
-                    <div class="floating-label">6. Authorization Request</div>
+                    <div class="floating-label action-label" id="authorization">6. Authorization Request</div>
                 </div>
                 <div class="horizontal-line right-to-left second-to-fourth"></div>
                 <div class="label-container">
-                    <div class="floating-label">7. Fetch ClientID Document</div>
+                    <div class="floating-label action-label">7. Fetch ClientID Document</div>
                 </div>
                 <div class="horizontal-line left-to-right second-to-third"></div>
                 <div class="label-container">
@@ -68,11 +68,11 @@
                 </div>
                 <div class="horizontal-line left-to-right second-to-fourth"></div>
                 <div class="label-container fourth-line">
-                    <div class="floating-label bordered">12. Generates DPoP Client Key Pair</div>
-                    <div class="floating-label bordered">13. Generates a DPoP Header</div>
+                    <div class="floating-label bordered action-label" id="generate-dpop">12. Generates DPoP Client Key Pair</div>
+                    <div class="floating-label bordered action-label" id="dpop-header">13. Generates a DPoP Header</div>
                 </div>
                 <div class="label-container second-to-fourth-line">
-                    <div class="floating-label">14. Token request with code and code verifier</div>
+                    <div class="floating-label action-label" id="token-request">14. Token request with code and code verifier</div>
                 </div>
                 <div class="horizontal-line right-to-left second-to-fourth"></div>
                 <div class="label-container second-line">
@@ -95,11 +95,11 @@
         </div>
         <div id="expandable-content" class="expandable-content">
             <div class="expand-header">
-                <h2>Additional Information</h2>
+                <h2>Action Panel</h2>
                 <button id="expand-toggle">Expand</button>
             </div>
             <div class="content">
-                <p>Your content goes here...</p>
+                <h3 id="action-panel-header"></h3>
             </div>
         </div>
     </div>

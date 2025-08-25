@@ -1,15 +1,23 @@
-// This file contains the main JavaScript logic for the application. 
-// It handles the click events for the blocks and arrows, allowing them to be individually clickable.
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const blocks = document.querySelectorAll('.block');
+document.addEventListener('DOMContentLoaded', () => {
+    const actionLabels = document.querySelectorAll('.action-label');
 
-//     blocks.forEach(block => {
-//         block.addEventListener('click', () => {
-//             alert(`Block clicked: ${block.textContent}`);
-//         });
-//     });
-// });
+    actionLabels.forEach(actionLabel => {
+        actionLabel.addEventListener('click', () => {
+            const actionPanelHeader = document.getElementById('action-panel-header');
+            actionPanelHeader.textContent = `Action: ${actionLabel.textContent}`;
+
+            const expandableContent = document.getElementById('expandable-content');
+            const bottomRow = document.getElementById('bottom-row');
+
+            expandableContent.classList.add('expanded');
+            bottomRow.classList.add('expanded');
+
+            const expandToggle = document.getElementById('expand-toggle');
+            expandToggle.textContent = expandableContent.classList.contains('expanded') ? 'Collapse' : 'Expand';
+        });
+    });
+});
 
 document.addEventListener('DOMContentLoaded', function() {
     const expandableContent = document.getElementById('expandable-content');

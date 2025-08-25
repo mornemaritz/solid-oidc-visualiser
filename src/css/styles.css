@@ -170,6 +170,11 @@ body {
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
+.floating-label.action-label:hover {
+    background: #d1e7dd;
+    cursor: pointer;
+}
+
 /* Expandable Content Styles */
 .expandable-content {
     position: fixed;
