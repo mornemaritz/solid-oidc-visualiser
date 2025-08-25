@@ -98,11 +98,18 @@
                 <h2>Action Panel</h2>
                 <button id="expand-toggle">Expand</button>
             </div>
+            <h3 id="action-panel-header"></h3>
             <div class="content">
-                <h3 id="action-panel-header"></h3>
+                <form id="webid-form">
+                    <div class="form-group">
+                        <label for="webid-input">WebID:</label>
+                        <input type="text" id="webid-input" name="webid" placeholder="Enter your WebID" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
             </div>
         </div>
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>
