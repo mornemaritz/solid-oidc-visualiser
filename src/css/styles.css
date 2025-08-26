@@ -243,6 +243,14 @@ body {
     background: #0056b3;
 }
 
+#action-panel-header {
+    padding-left: 1em;
+}
+
+.highlight {
+    background-color: rgb(27, 163, 68);
+}
+
 .form-group {
     margin-bottom: 1rem;
     padding-right: 1rem;  /* Add padding to create space on the right */
@@ -276,4 +284,34 @@ body {
 
 .submit-btn:hover {
     background: #0056b3;
+}
+
+.quad-display {
+    width: 66.67%;
+    padding-left: 1rem;
+}
+
+.quad-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 1rem;
+}
+
+.quad-header {
+    font-weight: bold;
+    padding: 0.5rem;
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #ddd;
+}
+
+.quad-values {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.quad-value {
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+    word-break: break-all;
 }

@@ -23,8 +23,8 @@
             </div>
             <div class="horizontal-lines-container">
                 <div class="label-container fourth-line">
-                    <div class="floating-label bordered action-label" id="use-app">1. Alice uses the decentphotos app</div>
-                    <div class="floating-label bordered action-label" id="select-web-id">2. Alice selects her OP or WebID</div>
+                    <div class="floating-label bordered">1. Alice uses the decentphotos app</div>
+                    <div class="floating-label bordered">2. Alice selects her OP or WebID</div>
                 </div>
                 <div class="label-container">
                     <div class="floating-label action-label" id="retrieve-profile">2.1 Retrieve Profile</div>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="horizontal-line right-to-left second-to-fourth"></div>
                 <div class="label-container">
-                    <div class="floating-label action-label">7. Fetch ClientID Document</div>
+                    <div class="floating-label">7. Fetch ClientID Document</div>
                 </div>
                 <div class="horizontal-line left-to-right second-to-third"></div>
                 <div class="label-container">
@@ -98,15 +98,31 @@
                 <h2>Action Panel</h2>
                 <button id="expand-toggle">Expand</button>
             </div>
-            <h3 id="action-panel-header"></h3>
-            <div class="content">
-                <form id="webid-form">
-                    <div class="form-group">
-                        <label for="webid-input">WebID:</label>
-                        <input type="text" id="webid-input" name="webid" placeholder="Enter your WebID" required>
+            <div id="action-panel-retrieve-profile" class="action-panel">
+                <h3 id="action-panel-header"></h3>
+                <div class="content">
+                    <form id="retrieve-profile-form">
+                        <div class="form-group">
+                            <label for="webid-input">WebID:</label>
+                            <input type="text" id="webid-input" name="webid" placeholder="Enter your WebID" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                    <div class="quad-display">
+                        <h3>Parsed Quad Values</h3>
+                        <div class="quad-grid">
+                            <div class="quad-header">Subject</div>
+                            <div class="quad-header">Predicate</div>
+                            <div class="quad-header">Object</div>
+                            <div id="quad-values" class="quad-values">
+                                <!-- Quad values will be inserted here dynamically -->
+                            </div>
+                        </div>
                     </div>
-                    <button type="submit" class="submit-btn">Submit</button>
-                </form>
+                </div>
+            </div>
+            <div id="action-panel-retrieve-op-config" class="action-panel">
+
             </div>
         </div>
     </div>

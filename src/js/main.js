@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     actionLabels.forEach(actionLabel => {
         actionLabel.addEventListener('click', () => {
-            const actionPanelHeader = document.getElementById('action-panel-header');
-            actionPanelHeader.textContent = `Action: ${actionLabel.textContent}`;
+            const activeActionPanel = document.getElementById(`action-panel-${actionLabel.id}`);
+            activeActionPanel.style.display = 'block';
 
             const expandableContent = document.getElementById('expandable-content');
             const bottomRow = document.getElementById('bottom-row');
@@ -51,24 +51,37 @@ document.getElementById("webid-form").addEventListener("submit", async e => {
     })
     .then(responseText => {
         console.log(responseText);
+        const quadValuesDiv = document.getElementById('quad-values');
+        quadValuesDiv.innerHTML = ''; // Clear existing values
+        
         var parser = new Parser();
         parser.parse(responseText,
             (err, quad, prefixes) => {
                 if (quad) {
-                    console.log(`quad.object.value: ${quad.object.value}`);
-                    console.log(`quad.predicate.value: ${quad.predicate.value}`);
-                    console.log(`quad.subject.value: ${quad.subject.value}`);
-                    console.log("-----------------------------------------");
+                    // Create new row for quad values
+                    const subjectDiv = document.createElement('div');
+                    const predicateDiv = document.createElement('div');
+                    const objectDiv = document.createElement('div');
+                    
+                    subjectDiv.className = 'quad-value';
+                    predicateDiv.className = 'quad-value';
+                    objectDiv.className = 'quad-value';
+                    
+                    subjectDiv.textContent = quad.subject.value;
+                    predicateDiv.textContent = quad.predicate.value;
+                    objectDiv.textContent = quad.object.value;
+                    
+                    quadValuesDiv.appendChild(subjectDiv);
+                    quadValuesDiv.appendChild(predicateDiv);
+                    quadValuesDiv.appendChild(objectDiv);
 
+                    // Existing OIDC issuer logic
                     if (quad.predicate.id == "http://www.w3.org/ns/solid/terms#oidcIssuer") {
-                        localStorage.setItem("solid_oidc_issuer", quad.object.value)
-                        document.getElementById("solid_oidc_issuer").innerText = quad.object.value;
-                        document.getElementById("solid_oidc_issuer_div").classList = "";
+                        localStorage.setItem("solid_oidc_issuer", quad.object.value);
+                        objectDiv.classList.add('highlight');
                     }
                 } else if (err) {
                     console.error(`item not parseable as an n3 quad`, err);
-                } else {
-                    console.log("Prefixes", prefixes);
                 }
             })
     })
