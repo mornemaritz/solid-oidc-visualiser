@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.getElementById("webid-form").addEventListener("submit", async e => {
+document.getElementById("retrieve-profile-form").addEventListener("submit", async e => {
     e.preventDefault();
     
     const webIdInput = document.getElementById("webid-input");
