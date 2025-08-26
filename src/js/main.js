@@ -2,20 +2,30 @@ import { Parser } from 'n3';
 
 document.addEventListener('DOMContentLoaded', () => {
     const actionLabels = document.querySelectorAll('.action-label');
+    const actionPanels = document.querySelectorAll('.action-panel');
 
     actionLabels.forEach(actionLabel => {
         actionLabel.addEventListener('click', () => {
-            const activeActionPanel = document.getElementById(`action-panel-${actionLabel.id}`);
-            activeActionPanel.style.display = 'block';
+            // Hide all panels first
+            actionPanels.forEach(panel => {
+                panel.style.display = 'none';
+            });
 
+            // Show the selected panel
+            const activeActionPanel = document.getElementById(`action-panel-${actionLabel.id}`);
+            if (activeActionPanel) {
+                activeActionPanel.style.display = 'block';
+            }
+
+            // Expand the content area
             const expandableContent = document.getElementById('expandable-content');
             const bottomRow = document.getElementById('bottom-row');
-
+            
             expandableContent.classList.add('expanded');
             bottomRow.classList.add('expanded');
 
             const expandToggle = document.getElementById('expand-toggle');
-            expandToggle.textContent = expandableContent.classList.contains('expanded') ? 'Collapse' : 'Expand';
+            expandToggle.textContent = 'Collapse';
         });
     });
 });

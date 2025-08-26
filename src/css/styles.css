@@ -218,6 +218,7 @@ body {
     transition: opacity 0.2s ease;
     padding: 1rem;
     display: flex; /* Add flex display */
+    gap: 2rem;
 }
 
 #webid-form {
@@ -314,4 +315,15 @@ body {
     padding: 0.5rem;
     border-bottom: 1px solid #eee;
     word-break: break-all;
+}
+
+.action-panel {
+    padding: 1rem;
+    display: none;
+}
+
+.action-panel h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #333;
 }
