@@ -100,10 +100,10 @@
             </div>
             
             <!-- Retrieve Profile Panel -->
-            <div id="action-panel-retrieve-profile" class="action-panel" style="display: none;">
+            <div id="action-panel-retrieve-profile" class="action-panel">
                 <h3>Retrieve Profile</h3>
                 <div class="content">
-                    <form id="retrieve-profile-form">
+                    <form id="retrieve-profile-form" class="panel-form">
                         <div class="form-group">
                             <label for="webid-input">WebID:</label>
                             <input type="text" id="webid-input" name="webid" placeholder="Enter your WebID" required>
@@ -113,70 +113,138 @@
                     <div class="quad-display">
                         <h3>Parsed Quad Values</h3>
                         <div class="quad-grid">
-                            <div class="quad-header">Subject</div>
-                            <div class="quad-header">Predicate</div>
-                            <div class="quad-header">Object</div>
-                            <div id="quad-values" class="quad-values">
-                                <!-- Quad values will be inserted here dynamically -->
-                            </div>
+                            <div class="grid-header">Subject</div>
+                            <div class="grid-header">Predicate</div>
+                            <div class="grid-header">Object</div>
+                            <div id="quad-values" class="quad-grid-values"></div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- OP Configuration Panel -->
-            <div id="action-panel-retrieve-op-config" class="action-panel" style="display: none;">
+            <div id="action-panel-retrieve-op-config" class="action-panel">
                 <h3>Retrieve OP Configuration</h3>
                 <div class="content">
-                    <!-- Add content specific to OP configuration -->
+                    <form id="op-config-form" class="panel-form">
+                        <div class="form-group">
+                            <label for="solid_oidc_issuer_base_url">OIDC Issuer:</label>
+                            <input type="text" id="solid_oidc_issuer_base_url" name="issuer" placeholder="Enter OIDC Issuer URL" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Retrieve Configuration</button>
+                    </form>
+                    <div class="response-display">
+                        <h3>Parsed Response Value</h3>
+                        <div class="key-value-grid">
+                            <div class="grid-header">Key</div>
+                            <div class="grid-header">Value</div>
+                            <div id="key-value-pairs" class="key-value-grid-values"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- PKCE Code Verifier Panel -->
-            <div id="action-panel-pcke-code-verifier" class="action-panel" style="display: none;">
+            <div id="action-panel-pcke-code-verifier" class="action-panel">
                 <h3>Generate PKCE Code and Code Verifier</h3>
                 <div class="content">
-                    <!-- Add content specific to PKCE generation -->
+                    <form id="pkce-form" class="panel-form">
+                        <div class="form-group">
+                            <label for="code-length">Code Length:</label>
+                            <input type="number" id="code-length" name="length" value="43" min="43" max="128" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Generate PKCE</button>
+                    </form>
+                    <div class="response-display"></div>
                 </div>
             </div>
 
             <!-- Save Code Verifier Panel -->
-            <div id="action-panel-save-code-verifier" class="action-panel" style="display: none;">
+            <div id="action-panel-save-code-verifier" class="action-panel">
                 <h3>Save Code Verifier</h3>
                 <div class="content">
-                    <!-- Add content specific to saving code verifier -->
+                    <form id="save-verifier-form" class="panel-form">
+                        <div class="form-group">
+                            <label for="code-verifier">Code Verifier:</label>
+                            <input type="text" id="code-verifier" name="verifier" required readonly>
+                        </div>
+                        <button type="submit" class="submit-btn">Save Verifier</button>
+                    </form>
+                    <div class="response-display"></div>
                 </div>
             </div>
 
             <!-- Authorization Panel -->
-            <div id="action-panel-authorization" class="action-panel" style="display: none;">
+            <div id="action-panel-authorization" class="action-panel">
                 <h3>Authorization Request</h3>
                 <div class="content">
-                    <!-- Add content specific to authorization -->
+                    <form id="auth-request-form" class="panel-form">
+                        <div class="form-group">
+                            <label for="auth-endpoint">Authorization Endpoint:</label>
+                            <input type="url" id="auth-endpoint" name="endpoint" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Start Authorization</button>
+                    </form>
+                    <div class="response-display"></div>
                 </div>
             </div>
 
             <!-- Generate DPoP Panel -->
-            <div id="action-panel-generate-dpop" class="action-panel" style="display: none;">
+            <div id="action-panel-generate-dpop" class="action-panel">
                 <h3>Generate DPoP Client Key Pair</h3>
                 <div class="content">
-                    <!-- Add content specific to DPoP generation -->
+                    <form id="dpop-gen-form" class="panel-form">
+                        <div class="form-group">
+                            <label for="key-type">Key Type:</label>
+                            <select id="key-type" name="keyType" required>
+                                <option value="RSA">RSA</option>
+                                <option value="EC">Elliptic Curve</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="submit-btn">Generate Key Pair</button>
+                    </form>
+                    <div class="response-display"></div>
                 </div>
             </div>
 
             <!-- DPoP Header Panel -->
-            <div id="action-panel-dpop-header" class="action-panel" style="display: none;">
+            <div id="action-panel-dpop-header" class="action-panel">
                 <h3>Generate DPoP Header</h3>
                 <div class="content">
-                    <!-- Add content specific to DPoP header -->
+                    <form id="dpop-header-form" class="panel-form">
+                        <div class="form-group">
+                            <label for="http-method">HTTP Method:</label>
+                            <select id="http-method" name="method" required>
+                                <option value="POST">POST</option>
+                                <option value="GET">GET</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="target-uri">Target URI:</label>
+                            <input type="url" id="target-uri" name="uri" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Generate Header</button>
+                    </form>
+                    <div class="response-display"></div>
                 </div>
             </div>
 
             <!-- Token Request Panel -->
-            <div id="action-panel-token-request" class="action-panel" style="display: none;">
+            <div id="action-panel-token-request" class="action-panel">
                 <h3>Token Request</h3>
                 <div class="content">
-                    <!-- Add content specific to token request -->
+                    <form id="token-request-form" class="panel-form">
+                        <div class="form-group">
+                            <label for="token-endpoint">Token Endpoint:</label>
+                            <input type="url" id="token-endpoint" name="endpoint" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="auth-code">Authorization Code:</label>
+                            <input type="text" id="auth-code" name="code" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Request Token</button>
+                    </form>
+                    <div class="response-display"></div>
                 </div>
             </div>
         </div>
