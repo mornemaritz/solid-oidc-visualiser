@@ -42,9 +42,17 @@
                     <div class="floating-label">OP Configuration</div>
                 </div>
                 <div class="horizontal-line left-to-right second-to-fourth"></div>
+                <div class="label-container second-to-fourth-line">
+                    <div class="floating-label action-label" id="register-client">3x. Register Client</div>
+                </div>
+                <div class="horizontal-line right-to-left second-to-fourth"></div>
+                <div class="label-container second-to-fourth-line">
+                    <div class="floating-label">Client Registration Response</div>
+                </div>
+                <div class="horizontal-line left-to-right second-to-fourth"></div>
                 <div class="label-container fourth-line">
-                    <div class="floating-label bordered action-label" id="pcke-code-verifier">4. Generates PKCE code and code verifier</div>
-                    <div class="floating-label bordered action-label" id="save-code-verifier">5. Saves code verifier to session storage</div>
+                    <div class="floating-label bordered action-label" id="pcke-code-verifier">4. Generates & 5. Saves PKCE code and code verifier</div>
+                    <!-- <div class="floating-label bordered" id="save-code-verifier">5. Saves code verifier to session storage</div> -->
                 </div>
                 <div class="label-container second-to-fourth-line">
                     <div class="floating-label action-label" id="authorization">6. Authorization Request</div>
@@ -144,31 +152,37 @@
                 </div>
             </div>
 
-            <!-- PKCE Code Verifier Panel -->
+            <!-- Register Client APP -->
+            <div id="action-panel-register-client" class="action-panel">
+                <h3>Register Client</h3>
+                <div class="content">
+                    <form id="client-registration-form" class="panel-form">
+                        <div class="form-group">
+                            <label for="registration_endpoint">Registration Endpoint:</label>
+                            <input type="text" id="registration_endpoint" name="registration-endpoint" placeholder="Enter Registration Endpoint" required>
+                            <label for="solid_client_config">Client Configuration:</label>
+                            <input type="text" id="solid_client_config" name="client-config" placeholder="Enter Client Configuration" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Register Client</button>
+                    </form>
+                    <div class="response-display">
+                        <h3>Parsed Response Value</h3>
+                        <div class="key-value-grid">
+                            <div class="grid-header">Key</div>
+                            <div class="grid-header">Value</div>
+                            <div id="client-registration-key-value-pairs" class="key-value-grid-values"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- generate and save PKCE Code Verifier Panel -->
             <div id="action-panel-pcke-code-verifier" class="action-panel">
                 <h3>Generate PKCE Code and Code Verifier</h3>
                 <div class="content">
                     <form id="pkce-form" class="panel-form">
-                        <div class="form-group">
-                            <label for="code-length">Code Length:</label>
-                            <input type="number" id="code-length" name="length" value="43" min="43" max="128" required>
-                        </div>
                         <button type="submit" class="submit-btn">Generate PKCE</button>
-                    </form>
-                    <div class="response-display"></div>
-                </div>
-            </div>
-
-            <!-- Save Code Verifier Panel -->
-            <div id="action-panel-save-code-verifier" class="action-panel">
-                <h3>Save Code Verifier</h3>
-                <div class="content">
-                    <form id="save-verifier-form" class="panel-form">
-                        <div class="form-group">
-                            <label for="code-verifier">Code Verifier:</label>
-                            <input type="text" id="code-verifier" name="verifier" required readonly>
-                        </div>
-                        <button type="submit" class="submit-btn">Save Verifier</button>
                     </form>
                     <div class="response-display"></div>
                 </div>
@@ -179,13 +193,21 @@
                 <h3>Authorization Request</h3>
                 <div class="content">
                     <form id="auth-request-form" class="panel-form">
+                        <h4>This will redirect the Auth server.</h4>
                         <div class="form-group">
-                            <label for="auth-endpoint">Authorization Endpoint:</label>
-                            <input type="url" id="auth-endpoint" name="endpoint" required>
+                            <label for="auth-url">Authorization Url:</label>
+                            <input type="url" id="auth-url" name="endpoint" required>
                         </div>
-                        <button type="submit" class="submit-btn">Start Authorization</button>
+                        <button type="submit" class="submit-btn">Submit Authorization request</button>
                     </form>
-                    <div class="response-display"></div>
+                    <div class="response-display">
+                        <h3>Parsed Response Values</h3>
+                        <div class="key-value-grid">
+                            <div class="grid-header">Key</div>
+                            <div class="grid-header">Value</div>
+                            <div id="authorization-key-value-pairs" class="key-value-grid-values"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
