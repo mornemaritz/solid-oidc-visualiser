@@ -414,13 +414,18 @@ document.getElementById("auth-request-form").addEventListener("submit", e => {
 // DPoP Generation Form Handler
 document.getElementById("dpop-gen-form").addEventListener("submit", async e => {
     e.preventDefault();
-    const keyType = document.getElementById("key-type").value;
     const responseDisplay = e.target.parentElement.querySelector('.response-display');
 
     try {
-        const keyPair = await generateKeyPair(keyType);
-        localStorage.setItem("dpop_key_pair", JSON.stringify(keyPair));
-        responseDisplay.innerHTML = `<div class="success">DPoP key pair generated successfully!</div>`;
+        var privateJsonWebKey = await EC.generate();
+        var publicJsonWebKey = EC.neuter(privateJsonWebKey);
+        localStorage.setItem("private_key", JSON.stringify(privateJsonWebKey));
+        localStorage.setItem("public_key", JSON.stringify(EC.neuter(privateJsonWebKey)));
+
+        responseDisplay.innerHTML = `<div class="success">DPoP key pair generated successfully!</div>
+        <div>
+        <pre>${JSON.stringify(publicJsonWebKey, null, 2)}</pre>
+        </div>`;
     } catch (error) {
         responseDisplay.innerHTML = `<div class="error">Error: ${error.message}</div>`;
     }
@@ -850,30 +855,6 @@ async function generateCodeChallenge(verifier) {
         .replace(/\+/g, '-')
         .replace(/\//g, '_')
         .replace(/=/g, '');
-}
-
-async function generateKeyPair(type) {
-    if (type === 'RSA') {
-        return await crypto.subtle.generateKey(
-            {
-                name: "RSASSA-PKCS1-v1_5",
-                modulusLength: 2048,
-                publicExponent: new Uint8Array([1, 0, 1]),
-                hash: "SHA-256"
-            },
-            true,
-            ["sign", "verify"]
-        );
-    } else {
-        return await crypto.subtle.generateKey(
-            {
-                name: "ECDSA",
-                namedCurve: "P-256"
-            },
-            true,
-            ["sign", "verify"]
-        );
-    }
 }
 
 async function generateDPoPHeader(method, uri, keyPair) {
