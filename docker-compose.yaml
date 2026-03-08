@@ -1,0 +1,9 @@
+services:
+  solid-oidc-sequence-web:
+    image: nginx:alpine
+    container_name: solid-oidc-sequence-web
+    ports:
+      - "4321:80"
+    volumes:
+      - ./dist:/usr/share/nginx/html
+    restart: unless-stopped

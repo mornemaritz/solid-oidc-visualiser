@@ -195,8 +195,18 @@
                     <form id="auth-request-form" class="panel-form">
                         <h4>This will redirect the Auth server.</h4>
                         <div class="form-group">
-                            <label for="auth-url">Authorization Url:</label>
-                            <input type="url" id="auth-url" name="endpoint" required>
+                            <label for="auth-endpoint">Authorization Endpoint:</label>
+                            <input type="url" id="auth-endpoint" name="auth-endpoint" required>
+                            <label for="response-type">Response Type:</label>
+                            <input type="text" id="response-type" name="response-type" value="code" required>
+                            <label for="client-id">Authorization Endpoint:</label>
+                            <input type="text" id="client-id" name="client-id" required>
+                            <label for="auth-endpoint">Authorization Endpoint:</label>
+                            <input type="url" id="auth-endpoint" name="endpoint" required>
+                            <label for="auth-endpoint">Authorization Endpoint:</label>
+                            <input type="url" id="auth-endpoint" name="endpoint" required>
+                            <label for="auth-endpoint">Authorization Endpoint:</label>
+                            <input type="url" id="auth-endpoint" name="endpoint" required>
                         </div>
                         <button type="submit" class="submit-btn">Submit Authorization request</button>
                     </form>

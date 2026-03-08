@@ -4,6 +4,9 @@
 
 This project is a Sequence Diagram Viewer that allows users to visualize sequence diagrams with interactive blocks and arrows. Each block and arrow is individually clickable, enabling dynamic interactions.
 
+
+[https://solidproject.org/TR/oidc-primer#authorization-code-pkce-flow](SOLID - Authorization Code Grant with PKCE Authorization Flow)
+
 ## Features
 
 - Interactive blocks and arrows
