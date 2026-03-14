@@ -4,6 +4,10 @@ This project allows users to visualize the SOLID OIDC sequence diagram  with int
 
 [https://solidproject.org/TR/oidc-primer#authorization-code-pkce-flow](SOLID - Authorization Code Grant with PKCE Authorization Flow)
 
+## NOTE: This is a work in progress and only works up to step 3x
+
+See [solid-vanilla-js](https://github.com/mornemaritz/solid-oidc-vanilla-js) for a fully working (non-visual) implementation
+
 ## Features
 
 - Interactive blocks and arrows
