@@ -1,9 +1,6 @@
-# Contents of /sequence-diagram-viewer/sequence-diagram-viewer/README.md
+# SOLDI OIDC Visualizer
 
-# Sequence Diagram Viewer
-
-This project is a Sequence Diagram Viewer that allows users to visualize sequence diagrams with interactive blocks and arrows. Each block and arrow is individually clickable, enabling dynamic interactions.
-
+This project allows users to visualize the SOLID OIDC sequence diagram  with interactive blocks and arrows. Each block and arrow is individually clickable, enabling dynamic interactions.
 
 [https://solidproject.org/TR/oidc-primer#authorization-code-pkce-flow](SOLID - Authorization Code Grant with PKCE Authorization Flow)
 
@@ -21,24 +18,19 @@ This project is a Sequence Diagram Viewer that allows users to visualize sequenc
 
 ### Installation
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   ```
+- Clone the repository: `bash git clone <repository-url>`
 
-2. Navigate to the project directory:
-   ```
-   cd sequence-diagram-viewer
-   ```
+- Navigate to the project directory: `cd solid-oidc-visualizer
 
-3. Install the dependencies:
-   ```
-   npm install
-   ```
+- Install the dependencies: `npm install`
+
+- Build the app: `npm run build`
+
+- start the app in docker container: `bash docker compose up -d`
 
 ### Usage
 
-1. Open `src/index.html` in your web browser to view the sequence diagram.
+1. Open `localhost:4321` in your web browser to view the sequence diagram.
 2. Click on the blocks and arrows to interact with them.
 
 ### Contributing

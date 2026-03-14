@@ -1,7 +1,7 @@
 {
-  "name": "sequence-diagram-viewer",
+  "name": "solid-oidc-visualizer",
   "version": "1.0.0",
-  "description": "A web application to visualize sequence diagrams with interactive blocks and arrows.",
+  "description": "A web application to visualize the SOLID OIDC flow with interactive blocks and arrows.",
   "main": "src/js/main.js",
   "type": "module",
   "scripts": {
