@@ -1,4 +1,4 @@
-# SOLDI OIDC Visualizer
+# SOLID OIDC Visualizer
 
 This project allows users to visualize the SOLID OIDC sequence diagram  with interactive blocks and arrows. Each block and arrow is individually clickable, enabling dynamic interactions.
 
